@@ -4,11 +4,11 @@ import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 const contactsSlice = createSlice({
-   name: 'contacts',  
+   name: 'contacts', 
    initialState: {
      contacts: [],
    },
-  reducers: {
+   reducers: {
       addContact: {
            prepare({ name, number}) {
               return {
@@ -19,12 +19,12 @@ const contactsSlice = createSlice({
                  },
               };
            },
-        reducer(state, action) {
-                state.contacts = [...state.contacts, action.payload]             
+        reducer(state, {payload}) {
+                state.contacts = [...state.contacts, payload]             
             },
        },
-     deleteContact(state, action) {
-            state.contacts = state.contacts.filter(contact => contact.id !== action.payload)
+     deleteContact(state, {payload}) {
+            state.contacts = state.contacts.filter(contact => contact.id !== payload)
        },
   },    
 });

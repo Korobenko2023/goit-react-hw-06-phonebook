@@ -5,7 +5,7 @@ import { getFilter } from "redux/selectors";
 
 export const Filter = () => {
     const filter = useSelector(getFilter);
-      const dispatch = useDispatch();
+      const dispatch = useDispatch();    
         return (
             <FilterDiv>
                 <FilterLabel htmlFor="filter">Find contacts by name</FilterLabel>
